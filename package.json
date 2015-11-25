@@ -1,0 +1,34 @@
+{
+  "name": "boilerplate_events",
+  "version": "1.0.0",
+  "description": "Simple responsive event management webapp (node + react + gmaps)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node zen.request.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuteBits/boilerplate_events.git"
+  },
+  "contributors": [
+    {
+      "name": "QuteBits",
+      "email": "qute.bits@gmail.com"
+    },
+    {
+      "name": "cat2608",
+      "email": "cat2608@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/QuteBits/boilerplate_events/issues"
+  },
+  "homepage": "https://github.com/QuteBits/boilerplate_events#readme",
+  "dependencies": {
+    "zenserver": "^1.7.9"
+  },
+  "devDependencies": {
+    "zenrequest": "^0.10.30"
+  }
+}

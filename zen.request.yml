@@ -1,0 +1,27 @@
+# -- General Info --------------------------------------------------------------
+host : localhost
+port : 3000
+
+# -- Files ---------------------------------------------------------------------
+tests:
+  - place
+
+# -- Mock ----------------------------------------------------------------------
+PLACES:
+  - name        : Corsica Studios
+    description : "Expect an arty, friendly crowd including plenty of students at this award-winning arts and entertainment venue. Corsica Studios in South London offers two rooms of music and a bar. A great choice if you're into dubstep and garage. The place to go for new, exciting and experimental sounds."
+    address     : "4 - 5 Elephant Road, London, SE17 1LB"
+    latitude    : 51.4938165
+    longitude   : -0.100818
+  - name        : Cargo
+    description : "A quick look at Cargo's live music listings reveals everything from psychedelic rock to jazz, hip-hop to electronic pop. Located underneath railway arches in Shoreditch, Cargo is at the centre of East London's music scene. The venue also hosts regular DJ nights and offers a tasty bar menu."
+    address     : "83 Rivington Street Shoreditch, London, EC2A 3AY"
+    latitude    : 51.5265322
+    longitude   : -0.0809388
+  - name        : Egg London
+    description : "A venue like no other, Egg London continues to push the boundaries. With the best music from the world’s greatest DJs, mixing with the best sound and lighting available, this club combines a variety of spaces indoors and outdoors along with a 24 hour licence. With an eclectic mix of nights, there’s something for all kinds of dance music fans to enjoy. Acts such as Dubfire, Laurent Garnier, Derrick May, Danny Tengalia and Kevin Saunderson have all played at the club in recent times."
+    address     : "200 York Way, Kings Cross, London, N7 9AP"
+    latitude    : 51.5417564
+    longitude   : -0.1242484
+
+
