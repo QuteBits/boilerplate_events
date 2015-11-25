@@ -3,6 +3,7 @@
 Hope    = require("zenserver").Hope
 Schema  = require("zenserver").Mongoose.Schema
 db      = require("zenserver").Mongo.connections.primary
+C       = require "../constants"
 
 Place = new Schema
   name        : type: String
@@ -34,7 +35,7 @@ Place.statics.findAround = (attributes) ->
         $geometry :
           type        : "Point"
           coordinates : [attributes.longitude, attributes.latitude]
-        $maxDistance : attributes.radius
+        $maxDistance : attributes.radius or C.RADIUS
   @find query, (error, values) -> promise.done error, values
   promise
 

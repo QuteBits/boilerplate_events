@@ -9,11 +9,12 @@ module.exports = (server) ->
    * @param
   ###
   server.post "/api/place", (request, response) ->
-    Place.register(request.parameters).then (error, result) ->
-      if error
-        response.json message: error.message, error.code
-      else
-        response.json result.parse()
+    if request.required ["name"]
+      Place.register(request.parameters).then (error, result) ->
+        if error
+          response.json message: error.message, error.code
+        else
+          response.json result.parse()
 
   ###
    * Find places around
