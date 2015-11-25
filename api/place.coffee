@@ -21,8 +21,9 @@ module.exports = (server) ->
    * @param
   ###
   server.get "/api/places", (request, response) ->
-    Place.findAround(request.parameters).then (error, result) ->
-      if error
-        response.json message: error.message, error.code
-      else
-        response.json (place.parse() for place in result)
+    if request.required ["latitude", "longitude"]
+      Place.findAround(request.parameters).then (error, result) ->
+        if error
+          response.json message: error.message, error.code
+        else
+          response.json (place.parse() for place in result)
