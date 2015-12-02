@@ -39,6 +39,15 @@ Place.statics.findAround = (attributes) ->
   @find query, (error, values) -> promise.done error, values
   promise
 
+Place.statics.search = (query, limit = 0) ->
+  promise = new Hope.Promise()
+  @find(query).limit(limit).exec (error, values) ->
+    if limit is 1 and not error
+      error = code: 402, message: "Place not found." if values.length is 0
+      values = values[0]
+    promise.done error, values
+  promise
+
 # ------------------------------------------------------------------------------
 Place.methods.parse = ->
   id          : @_id

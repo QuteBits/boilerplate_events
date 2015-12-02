@@ -28,3 +28,16 @@ module.exports = (server) ->
           response.json message: error.message, error.code
         else
           response.json (place.parse() for place in result)
+
+  ###
+   * Get a location by ID
+   * @method  GET
+   * @param
+  ###
+  server.get "/api/place/:id", (request, response) ->
+    if request.required ["id"]
+      Place.search(_id: request.parameters.id, limit = 1).then (error, result) ->
+        if error
+          response.json message: error.message, error.code
+        else
+          response.json result.parse()
