@@ -48,6 +48,14 @@ Place.statics.search = (query, limit = 0) ->
     promise.done error, values
   promise
 
+Place.statics.updateAttributes = (query, attributes) ->
+  promise = new Hope.Promise()
+  attributes.updated_at = new Date()
+  @findByIdAndUpdate query, attributes, new: true,  (error, value) ->
+    error = code: 402, message: "Place not found" if error or value is null
+    promise.done error, value
+  promise
+
 # ------------------------------------------------------------------------------
 Place.methods.parse = ->
   id          : @_id
